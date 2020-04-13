@@ -1,10 +1,16 @@
 const inquirer = require("inquirer");
 
+
 inquirer
     .prompt([
         {
             type: "input",
-            message: "What is the title of the project?",
+            message: "What is your Github username?",
+            name: "gitName"
+        },
+        {
+            type: "input",
+            message: "What is the title of the project? (this should be the same name as repo)",
             name: "proName"
         },
         {
@@ -22,6 +28,27 @@ inquirer
             message: "How would the user install your project?",
             name: "proInstall"
         },
+        {
+            type: "input",
+            message: "How would the user use your project?",
+            name: "proUse"
+        },
+        {
+            type: "input",
+            message: "What licenses are used in your project?",
+            name: "prolicenses"
+        },
+        {
+            type: "input",
+            message: "who is Contributing to your project?",
+            name: "proContr"
+        },
+        {
+            type: "input",
+            message: "What tests are used in your project?",
+            name: "proTest"
+        },
+        
     ]).then(function(response) {
             console.log(response.proName)
             console.log(response.proDesc)
@@ -39,3 +66,5 @@ function init() {
 
 init();
 
+
+//[![Travis CI](https://travis-ci.org/${gitName}/${proName}.svg?branch=master)](https://travis-ci.org/tterb/yt2mp3)

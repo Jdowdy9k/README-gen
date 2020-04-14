@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const fs = require("fs");
 
 
 inquirer
@@ -49,22 +50,54 @@ inquirer
             name: "proTest"
         },
         
-    ]).then(function(response) {
-            console.log(response.proName)
-            console.log(response.proDesc)
-      });
+    ]).then(function (questions) {
 
 
 
 
-      function writeToFile(fileName, data) {
-}
+      fs.writeFile("README.md", generateMarkdown = `
+            # ${proName.response} README \n
+            ## **${gitName.response}** \n
+            # User Profile ${response.data.avatar_url} \n
+            # App Description \n
+            ${proDesc.response}\n
+            ## Table of Contents \n
+            ${proTable.response}\n
+            ### Installation \n
+            ${proInstall.response}\n
+            ## ** Email**\n
+            ${.}\n
+            ## Contributors \n
+            ${.}\n
+            ## Testing \n
+            ${.}\n
+            ## Questions \n
+            ${.}
+            `,
+            
 
-function init() {
+            function(err) {
 
-}
+                if (err) {
+                  return console.log(err);
+                }
+            
+            
+                })
+               let badge = "[![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()";
+                fs.appendFile("README.md", '\n' + badge, function(err){
+                    if (err) {
+                        return console.log(err);
+                    }
+                    else{
+                        console.log("Success! You did it!");
+                    }
+                });
+
+            });
+        });
+    };
 
 init();
 
 
-//[![Travis CI](https://travis-ci.org/${gitName}/${proName}.svg?branch=master)](https://travis-ci.org/tterb/yt2mp3)

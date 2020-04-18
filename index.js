@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-
+//establish function to run through inquirer prompts
 function fireQuestions() {
     return inquirer.prompt(questions);
 }

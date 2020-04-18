@@ -20,7 +20,7 @@ const questions = [
     },
     {
         type: "input",
-        message: "What is the title of the project? (this should be the same name as repo)",
+        message: "What is the title of the project?",
         name: "proName"
     },
     {
@@ -38,11 +38,7 @@ const questions = [
         message: "How would the user install your project?",
         name: "install"
     },
-    {
-        type: "input",
-        message: "How would the user use your project?",
-        name: "user"
-    },
+
     {
         type: "input",
         message: "What licenses are used in your project?",
@@ -66,9 +62,8 @@ function init() {
     fireQuestions()
         .then(function (questions) {
 
-            fs.writeFile("README.md", process.argv[2] ,function (err) {
-                `
-            # ${ questions.proName } README \n
+            fs.writeFile("README.md", `
+            # ${ questions.proName} README \n
             ## ** ${ questions.gitname}** \n
             ## ** Email **\n
                 ${ questions.email} \n
@@ -81,26 +76,33 @@ function init() {
             ## Contributors \n
                 ${ questions.contr} \n
             ## Testing \n
-                ${ questions.Test} \n`
+                ${ questions.Test} \n
+                `,
 
+                function (err) {
 
-
-
-                let badge = "[![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()";
-                fs.appendFile("README.md", '\n' + process.argv[2] + badge, function (err) {
                     if (err) {
                         return console.log(err);
                     }
-                    else {
-                        console.log("Success! You did it!");
-                    }
+
+
                 });
 
-
-
+            let badge = "[![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()";
+            fs.appendFile("README.md", '\n' + badge, function (err) {
+                if (err) {
+                    return console.log(err);
+                }
+                else {
+                    console.log("Success! You did it!");
+                }
             });
 
+
+
         });
+
+
 
 }
 

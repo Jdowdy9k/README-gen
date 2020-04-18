@@ -3,7 +3,7 @@ const fs = require("fs");
 
 
 function fireQuestions() {
-    return inquirer.prompt(questions)
+    return inquirer.prompt(questions);
 }
 
 const questions = [
@@ -26,37 +26,37 @@ const questions = [
     {
         type: "input",
         message: "Give a discription of your project.",
-        name: "proDesc"
+        name: "desc"
     },
     {
         type: "input",
         message: "Give a table of contents for your project.",
-        name: "proTable"
+        name: "table"
     },
     {
         type: "input",
         message: "How would the user install your project?",
-        name: "proInstall"
+        name: "install"
     },
     {
         type: "input",
         message: "How would the user use your project?",
-        name: "proUse"
+        name: "user"
     },
     {
         type: "input",
         message: "What licenses are used in your project?",
-        name: "prolicenses"
+        name: "licenses"
     },
     {
         type: "input",
         message: "who is Contributing to your project?",
-        name: "proContr"
+        name: "contr"
     },
     {
         type: "input",
         message: "What tests are used in your project?",
-        name: "proTest"
+        name: "Test"
     },
 
 
@@ -66,27 +66,26 @@ function init() {
     fireQuestions()
         .then(function (questions) {
 
-            fs.writeFile("README.md", function (err) {
+            fs.writeFile("README.md", process.argv[2] ,function (err) {
                 `
-            # ${ proName.response} README \n
-            ## ** ${ gitName.response}** \n
+            # ${ questions.proName } README \n
+            ## ** ${ questions.gitname}** \n
             ## ** Email **\n
-                ${ email.response} \n
-            # User Profile ${ response.data.avatar_url} \n
+                ${ questions.email} \n
             # App Description \n
-                ${ proDesc.response} \n
+                ${ questions.desc} \n
             ## Table of Contents \n
-                ${ proTable.response} \n
+                ${ questions.table} \n
             ### Installation \n
-                ${ proInstall.response} \n
+                ${ questions.install} \n
             ## Contributors \n
-                ${ proContr.response} \n
+                ${ questions.contr} \n
             ## Testing \n
-                ${ protest.response} \n`
+                ${ questions.Test} \n`
 
 
 
-               
+
                 let badge = "[![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()";
                 fs.appendFile("README.md", '\n' + process.argv[2] + badge, function (err) {
                     if (err) {

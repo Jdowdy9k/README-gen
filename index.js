@@ -63,8 +63,9 @@ function init() {
         .then(function (questions) {
 
             fs.writeFile("README.md", `
-            # ${ questions.proName} README \n
-            ## ** ${ questions.gitname}** \n
+            ## ** ${ questions.proName} README ** \n
+            ## ** Username **\n
+                ${ questions.gitname}  \n
             ## ** Email **\n
                 ${ questions.email} \n
             # App Description \n

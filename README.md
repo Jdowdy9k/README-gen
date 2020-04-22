@@ -1,30 +1,18 @@
 
-Test1 README 
+ ## ** README-Generator README *
+ ## ** Username 
+     undefined
+ ## ** Email 
+     Jdowdy9k@gmail.co
+ # App Descriptio
+     The app creates a custom README.md file to attach to a github project.
+ ## Table of Content
 
-# ** undefined** 
-
-# ** Email **
-
-   test1 
-
- App Description 
-
-   test2 
-
-# Table of Contents 
-
-   test3 
-
-## Installation 
-
-   test4 
-
-# Contributors 
-
-   test6 
-
-# Testing 
-
-     test7 
-
-   
+ ### Installatio
+     install npm then node index.js
+ ## Contributor
+     Me
+ ## Testin
+     
+                
+[![NPM Version](https://img.shields.io/npm/v/npm.svg?style=flat)]()

@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Jdowdy9k/README-gen#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "fs": "0.0.1-security",
     "inquirer": "^7.1.0",
     "squirrelly": "^7.9.2"
